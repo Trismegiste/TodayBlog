@@ -12,16 +12,18 @@
         <default key="_controller">TrismegisteFrontBundle:Blog:about</default>
     </route>
     
-    <route id="blog_edit" pattern="/edit">
-        <default key="_controller">TrismegisteFrontBundle:Blog:edit</default>
+    <route id="blog_remove" pattern="/remove/{id}">
+        <default key="_controller">TrismegisteFrontBundle:Blog:remove</default>
     </route>
 
-    <route id="customer_index" pattern="/customer/index">
+    <route id="customer_index" pattern="/customer/index" host="admin.{domain}">
         <default key="_controller">TrismegisteFrontBundle:Customer:index</default>
+        <requirement key="domain">.+</requirement>
     </route>
 
-    <route id="customer_new" pattern="/customer/create">
+    <route id="customer_new" pattern="/customer/create" host="admin.{domain}">
         <default key="_controller">TrismegisteFrontBundle:Customer:create</default>
+        <requirement key="domain">.+</requirement>
     </route>
 
 </routes>
