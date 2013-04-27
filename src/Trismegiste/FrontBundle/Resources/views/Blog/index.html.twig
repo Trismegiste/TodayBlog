@@ -1,6 +1,29 @@
 {% extends '::base.html.twig' %}
 
+{% block javascripts %}
+<script src="{{ asset('bundles/trismegistefront/js/wysihtml5-0.3.0.min.js') }}"></script>
+{{ parent() }}
+<script src="{{ asset('bundles/trismegistefront/js/bootstrap-wysihtml5-0.0.2.min.js') }}"></script>
+<script>
+$(document).ready(function() {
+    $('#wysiwyg').wysihtml5()
+})
+</script>
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('bundles/trismegistefront/css/bootstrap-wysihtml5-0.0.2.css') }}"/>
+<style>
+    #wysiwyg {
+        width: 100%;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
+<textarea id="wysiwyg"></textarea>
+
 {% for article in blog %}
 <div class="row-fluid">
     <h2>{{ article.title }}</h2>
