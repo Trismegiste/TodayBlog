@@ -11,5 +11,8 @@
     <route id="trismegiste_about" pattern="/about">
         <default key="_controller">TrismegisteFrontBundle:Blog:about</default>
     </route>
-
+    
+    <route id="blog_edit" pattern="/edit">
+        <default key="_controller">TrismegisteFrontBundle:Blog:edit</default>
+    </route>
 </routes>

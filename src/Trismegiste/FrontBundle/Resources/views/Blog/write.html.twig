@@ -23,9 +23,10 @@ $(document).ready(function() {
 
 {% block content %}
 <div class="row-fluid">
-<form action="path('task_new')" method="post" {{ form_enctype(form) }}>
+<form action="{{ path('blog_edit') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form.title, {'attr': {'class': 'fullsize', 'style': "font-size: 31.5px; height: 40px"}}) }}
     {{ form_widget(form.body, {'attr': {'rows': 8, 'class': 'fullsize'}}) }}
+    {{ form_rest(form) }}
     <input type="submit" />
 </form>
 </div>
