@@ -1,8 +1,10 @@
 {% extends '::base.html.twig' %}
 
 {% block content %}
+{% for article in blog %}
 <div class="row-fluid">
-    <h1>title</h1>
-    content
+    <h2>{{ article.title }}</h2>
+    {{ article.body }}
 </div>
+{% endfor %}
 {% endblock %}
