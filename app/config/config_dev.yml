@@ -26,4 +26,4 @@ assetic:
     use_controller: true
 
 dokudoki:
-    database: Sf2ffbp_%developer.name%
+    database: Trismegiste_%developer.name%

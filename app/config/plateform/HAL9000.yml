@@ -1,4 +1,4 @@
 parameters:
     locale: en
     secret: NoProblem
-    mongodb_server: 'localhost:27017'
+    mongodb_server: '127.0.0.1:27017'

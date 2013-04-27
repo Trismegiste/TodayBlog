@@ -19,7 +19,10 @@ class BlogController extends Template
 
     public function indexAction()
     {
-        $blog = array(array('title' => 'Ze title', 'body' => 'lorem ipsum'));
+        $blog = $this
+                ->get('dokudoki.collection')
+                ->find(array('-class' => 'article'));
+        $blog->sort(array('publishedAt' => -1));
         $article = $this->createForm(new \Trismegiste\FrontBundle\Form\ArticleType());
 
         return $this->render('TrismegisteFrontBundle:Blog:write.html.twig', array('blog' => $blog, 'form' => $article->createView()));
@@ -36,7 +39,9 @@ class BlogController extends Template
             $article = $this->createForm(new \Trismegiste\FrontBundle\Form\ArticleType());
             $article->bind($request);
             if ($article->isValid()) {
-                print_r($article->getData());
+                $publish = $article->getData();
+                $publish->setPublishedAt(time());
+                $this->get('dokudoki.repository')->persist($publish);
             }
         }
         return $this->indexAction();

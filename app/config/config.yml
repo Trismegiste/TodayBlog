@@ -44,5 +44,5 @@ assetic:
 dokudoki:
     stage: blackmagic
     server: %mongodb_server%
-    database: Sf2ffbp
-    collection: boilerplate
+    database: Trismegiste
+    collection: blog

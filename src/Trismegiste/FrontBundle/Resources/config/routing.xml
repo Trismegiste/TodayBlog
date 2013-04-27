@@ -15,4 +15,13 @@
     <route id="blog_edit" pattern="/edit">
         <default key="_controller">TrismegisteFrontBundle:Blog:edit</default>
     </route>
+
+    <route id="customer_index" pattern="/customer/index">
+        <default key="_controller">TrismegisteFrontBundle:Customer:index</default>
+    </route>
+
+    <route id="customer_new" pattern="/customer/create">
+        <default key="_controller">TrismegisteFrontBundle:Customer:create</default>
+    </route>
+
 </routes>
