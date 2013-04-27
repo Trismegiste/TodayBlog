@@ -18,7 +18,7 @@ class BlogController extends Template
     public function indexAction()
     {
         $blog = array(array('title' => 'Ze title', 'body' => 'lorem ipsum'));
-        return $this->render('TrismegisteFrontBundle:Blog:index.html.twig', array('blog' => $blog));
+        return $this->render('TrismegisteFrontBundle:Blog:write.html.twig', array('blog' => $blog));
     }
 
     protected function getTopMenu()
