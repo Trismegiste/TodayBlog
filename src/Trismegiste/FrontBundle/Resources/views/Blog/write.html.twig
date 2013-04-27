@@ -6,7 +6,7 @@
 <script src="{{ asset('bundles/trismegistefront/js/bootstrap-wysihtml5-0.0.2.min.js') }}"></script>
 <script>
 $(document).ready(function() {
-    $('#wysiwyg').wysihtml5({ "font-styles": false })
+    $('#article_body').wysihtml5({ "font-styles": false })
 })
 </script>
 {% endblock %}
@@ -23,10 +23,11 @@ $(document).ready(function() {
 
 {% block content %}
 <div class="row-fluid">
-    <form>
-        <input type="text" name="title" class="fullsize"/>
-        <textarea id="wysiwyg" name="body" class="fullsize"></textarea>
-    </form>
+<form action="path('task_new')" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form.title, {'attr': {'class': 'fullsize', 'style': "font-size: 31.5px; height: 40px"}}) }}
+    {{ form_widget(form.body, {'attr': {'rows': 8, 'class': 'fullsize'}}) }}
+    <input type="submit" />
+</form>
 </div>
 {{ parent() }}
 {% endblock %}
